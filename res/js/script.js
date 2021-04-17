@@ -8,6 +8,7 @@ function GetCode(id, c) {
 function Code(ev) {
   ev.preventDefault();
   id("code-box").value = "";
+  id("frame-loader").classList.remove("hide");
   var validated = true;
   var url = ev.target.url.value || " ";
   url = url.endsWith("/?ref=app") ? url.substr(0, url.length - 9) : url;
@@ -16,8 +17,10 @@ function Code(ev) {
   if (!validated) { Toast("Please Enter a Valid Code URL!", "red") }
   else {
     GetCode(url, data => {
+      id("frame-loader").classList.add("hide");
       if (data == null) {
-        Toast("Please Enter A Valid URL!", "red")
+        Toast("Please Enter A Valid URL!", "red");
+        return false;
       }
       var html = data.sourceCode;
       var css = data.cssCode;
@@ -92,7 +95,7 @@ function _() {
     id("download").classList.add("hide");
   }
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js');
+    navigator.serviceWorker.register('./service-worker.js');
     console.log("Service Worker Registered!");
   }
 }
