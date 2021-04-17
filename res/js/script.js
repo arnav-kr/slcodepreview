@@ -91,6 +91,10 @@ function _() {
   if (typeof testA.download == "undefined") {
     id("download").classList.add("hide");
   }
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+    console.log("Service Worker Registered!");
+  }
 }
 
 /* 
