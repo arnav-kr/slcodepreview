@@ -92,7 +92,7 @@ function _() {
     id("download").classList.add("hide");
   }
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js');
+    navigator.serviceWorker.register('./service-worker.js');
     console.log("Service Worker Registered!");
   }
 }
