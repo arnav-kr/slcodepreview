@@ -1,0 +1,32 @@
+{
+    "theme_color": "#1BA68C",
+    "background_color": "#03A678",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "name": "SoloLearn Code Previewer and Previewer",
+    "short_name": "SL Code Previewer",
+    "description": "SoloLearn Code Previewer and downloader is a tool for previewing and downloading the sololearn codes. You just have to Enter The URL of your code.",
+    "icons": [
+        {
+            "src": "./res/images/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./res/images/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "./res/images/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "./res/images/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
