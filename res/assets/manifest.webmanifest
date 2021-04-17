@@ -1,7 +1,7 @@
 {
     "theme_color": "#1BA68C",
     "background_color": "#03A678",
-    "display": "minimal-ui",
+    "display": "standalone",
     "scope": "https://arnav-kr.github.io/slcodepreview/",
     "start_url": "https://arnav-kr.github.io/slcodepreview/",
     "orientation": "portrait",
