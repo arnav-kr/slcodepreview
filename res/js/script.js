@@ -72,7 +72,7 @@ function Code(ev) {
         });
       }
       else {
-
+         Toast("Not a web Code!","red");
       }
       // console.log(JSON.stringify(data))
     });
