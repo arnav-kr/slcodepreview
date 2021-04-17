@@ -1,9 +1,10 @@
 {
     "theme_color": "#1BA68C",
     "background_color": "#03A678",
-    "display": "standalone",
+    "display": "minimal-ui",
     "scope": "/",
     "start_url": "/",
+    "orientation": "portrait",
     "name": "SoloLearn Code Previewer and Downloader",
     "short_name": "SL Code Previewer",
     "description": "SoloLearn Code Previewer and downloader is a tool for previewing and downloading the sololearn codes. You just have to Enter The URL of your code.",
