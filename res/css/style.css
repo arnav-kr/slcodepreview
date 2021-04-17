@@ -1,0 +1,141 @@
+:root {
+  --pw-primary: #ffffff;
+  --pw-secondary: #eceff1;
+  --pw-text: #212121;
+  --pw-shadow: rgba(0, 0, 0, 0.12);
+  --pw-loader-color: #222222;
+}
+
+body {
+  margin: 0;
+}
+
+main, .frame-loader, #main-frame {
+  width: 100vw;
+  height: calc(100vh - 3.5rem);
+  position: fixed;
+  top: 3.5rem;
+  left: 0;
+}
+
+#main-frame {
+  border: 0;
+  outline: 0;
+}
+
+.frame-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background-color: rgb(250, 250, 250);
+}
+
+.nav, header {
+  width: 100vw;
+  height: 3.5rem;
+  background-color: #ffffff;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  user-select: none;
+}
+
+.nav {
+  box-shadow: 0 3px 6px 0 var(--pw-shadow);
+}
+
+.nav form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: .5rem 0;
+  outline-color: green;
+  box-sizing: border-box;
+}
+
+.nav-search {
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 4rem;
+  padding: 1rem;
+  border: 0;
+  background-color: var(--pw-secondary);
+  width: calc(100% - 0rem);
+  outline: 0;
+  font-size: 1.1rem;
+}
+
+.nav button {
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  padding: .5rem;
+  border-radius: 50%;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 .25rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(pw-text);
+}
+
+.nav button:active {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.nav .material-icons-round {
+  padding: 0;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.hide {
+  display: none !important;
+}
+
+/* Styling for Inline Loader Stsrt */
+
+.inline-loader {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--pw-loader-color);
+  border-radius: 50%;
+  animation: inline-loader-rotate 2s linear infinite;
+}
+
+.inline-loader::before {
+  position: absolute;
+  content: "";
+  left: calc(50% - 5px);
+  bottom: 5px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--pw-loader-color);
+  border-radius: 50%;
+}
+
+@keyframes inline-loader-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Styling for Inline Loader End */
+#code-box{
+    position:fixed;
+    top:-9999999999px;
+    left:-9999999999px;
+}
