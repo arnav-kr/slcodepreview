@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link
+    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round|Material+Icons+Two+Tone"
+    rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="theme-color" content="#1BA68C">
+  <meta name="description" content="SoloLearn Code Previewer and downloader is a tool for previewing and downloading the sololearn codes. You just have to Enter The URL of your code.">
+  <meta name="keywords" content="sololearn, sl, previewer, sololearn code previewer, sololearn code downloader, code downloader, tool,tools, utilities,code previewer,sololearn tool, sl tool, google, twitter, help,code,html,css,js,javascript,coding,programming,programmer,coder,arnav,arnav-kr,arnav-kumar,arnav kumar, kumar,github,source code,source,code">
+  <link rel="shortcut icon" href="icon-512x512.png" type="image/x-icon">
+  <link rel="manifest" href="./res/assets/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./res/images/icon-512x512.png">
+  <title>Code Previewer and Downloader | SoloLearn</title>
+  <link rel="stylesheet" href="./res/css/style.css">
+  <script src="./res/js/script.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <form onsubmit="Code(event)">
+        <a id="launch-in-browser" target="_blank"><button type="button" title="launch in browser"
+            class="go-to-browser"><span class="material-icons-round">launch</span></button></a>
+        <button type="button" id="share" title="Share Code" class="share"><span
+            class="material-icons-round">share</span></button>
+        <a id="download" target="_blank"><button type="button" title="Download Source Code" class="download"><span
+              class="material-icons-round">download</span></button></a>
+        <button id="copy" type="button" title="Copy Source Code" class="copy"><span
+            class="material-icons-round">copy</span></button>
+        <input name="url" placeholder="Enter Code url" class="nav-search" type="text" id="url">
+        <button type="submit" id="go" class="search-submit"><span class="material-icons-round"
+            title="Search">search</span></button>
+      </form>
+    </div>
+  </header>
+  <main>
+    <iframe id="main-frame" name="main-frame"></iframe>
+  </main>
+  <div class="frame-loader hide" id="frame-loader">
+    <div class="inline-loader" role="loader"></div>
+  </div>
+  <textarea width="0" height="0" readonly id="code-box"></textarea>
+  <script src="https://cdn.jsdelivr.net/gh/AssassinAguilar/Alertism/Alertism.min.js"></script>
+</body>
+
+</html>
