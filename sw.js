@@ -1,3 +1,5 @@
+self.skipWaiting()
+
 const PRECACHE = 'precache-v1';
 const RUNTIME = 'runtime';
 
