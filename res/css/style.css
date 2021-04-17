@@ -8,6 +8,9 @@
 
 body {
   margin: 0;
+  max-height:100vh;
+  overflow:hidden;
+  min-height:100vh;
 }
 
 main, .frame-loader, #main-frame {
