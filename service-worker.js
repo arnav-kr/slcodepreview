@@ -19,7 +19,8 @@ self.addEventListener('install', function(e) {
  e.waitUntil(
    caches.open('slcodepreview').then(function(cache) {
      return cache.addAll([
-       '/',
+       './',
+       'https://arnav-kr.github.io/slcodepreview/',
        'index.html',
        'res/images/maskable/icon_192.png',
        'res/images/maskable/icon_512.png',
