@@ -66,9 +66,7 @@ function Code(ev) {
             url: window.location.pathname + "?q=" + publicId
           }).then(() => {
             Toast('Thanks for sharing!', "mediumseagreen");
-          }).catch(e => {
-            Toast('An Error Occured!', "red");
-          });
+          })
         });
       }
       else {
