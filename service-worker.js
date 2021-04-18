@@ -20,7 +20,7 @@ self.addEventListener('install', function(e) {
    caches.open('slcodepreview').then(function(cache) {
      return cache.addAll([
        './',
-       'https://arnav-kr.github.io/slcodepreview/',
+       'https://cdn.jsdelivr.net/gh/AssassinAguilar/Alertism/Alertism.min.js',
        'index.html',
        'res/images/maskable/icon_192.png',
        'res/images/maskable/icon_512.png',
