@@ -33,7 +33,6 @@ self.addEventListener('install', function(e) {
        'res/images/icon-256x256.png',
        'res/images/icon-384x384.png',
        'res/images/icon-512x512.png',
-       'res/images/icon-192x192.png',
        'res/css/style.css',
        'res/js/script.js'
      ]);
