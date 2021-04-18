@@ -1,5 +1,0 @@
-[{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target" : { "namespace": "android_app", "package_name": "cat.arnav.slpreview",
-                   "sha256_cert_fingerprints": ["FA:6C:C6:A4:CB:17:84:C7:CF:C9:20:03:E1:DC:13:A9:0A:BD:99:C4:5C:89:1B:BC:8F:C0:58:FE:58:D1:CD:48"] }
-    }]
