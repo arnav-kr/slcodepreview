@@ -7,73 +7,78 @@ function GetCode(id, c) {
 }
 function Code(ev) {
   ev.preventDefault();
-  id("code-box").value = "";
-  id("frame-loader").classList.remove("hide");
-  var validated = true;
-  var url = ev.target.url.value || " ";
-  url = url.endsWith("/?ref=app") ? url.substr(0, url.length - 9) : url;
-  url = url.includes("https://code.sololearn.com/") ? url.split("https://code.sololearn.com/")[1] : url;
-  url.split("").includes(/[\/|\.|\?|=]/) || url.trim().length == 0 ? validated = false : void 0
-  if (!validated) { Toast("Please Enter a Valid Code URL!", "red") }
+  if (!navigator.onLine) {
+    Toast("No Internet!");
+  }
   else {
-    GetCode(url, data => {
-      id("frame-loader").classList.add("hide");
-      if (data == null) {
-        Toast("Please Enter A Valid URL!", "red");
-        return false;
-      }
-      var html = data.sourceCode;
-      var css = data.cssCode;
-      var js = data.jsCode;
-      var lang = data.language;
-      var source;
-      var name = data.name;
-      var publicId = data.publicId;
-      var jsScript = document.createElement("script");
-      jsScript.type = "text/javascript";
-      jsScript.textContent = js;
-      jsScript.id = "script-from-editor";
-      var cssStyle = document.createElement("style");
-      cssStyle.textContent = css;
-      cssStyle.id = "style-from-editor"
-      if (lang == "web") {
-        var doc = new DOMParser().parseFromString(html, 'text/html');
-        doc.head.appendChild(cssStyle);
-        doc.head.appendChild(jsScript);
-        source = doc.documentElement.outerHTML;
-        id("main-frame").srcdoc = source;
-        id("code-box").value = source;
-        var dataURI = 'data:text/html,' + encodeURIComponent(source);
-        id("launch-in-browser").href = ev.target.url.value;
-        id("download").addEventListener("click", e => {
-          download(source, name, "text/html");
-        });
-        id("copy").addEventListener("click", e => {
-          try {
-            var copyText = id("code-box")
-            copyText.select();
-            copyText.setSelectionRange(0, 99999999999999999999999);
-            document.execCommand("copy");
-            Toast("Copied to Clipboard!", 'mediumseagreen');
-          }
-          catch (e) {
-            Toast("Couldn't Copy!", 'red');
-          }
-        });
-        id("share").addEventListener("click", e => {
-          navigator.share({
-            title: name,
-            url: window.location.pathname + "?q=" + publicId
-          }).then(() => {
-            Toast('Thanks for sharing!', "mediumseagreen");
-          })
-        });
-      }
-      else {
-         Toast("Not a web Code!","red");
-      }
-      // console.log(JSON.stringify(data))
-    });
+    id("code-box").value = "";
+    id("frame-loader").classList.remove("hide");
+    var validated = true;
+    var url = ev.target.url.value || " ";
+    url = url.endsWith("/?ref=app") ? url.substr(0, url.length - 9) : url;
+    url = url.includes("https://code.sololearn.com/") ? url.split("https://code.sololearn.com/")[1] : url;
+    url.split("").includes(/[\/|\.|\?|=]/) || url.trim().length == 0 ? validated = false : void 0
+    if (!validated) { Toast("Please Enter a Valid Code URL!", "red") }
+    else {
+      GetCode(url, data => {
+        id("frame-loader").classList.add("hide");
+        if (data == null) {
+          Toast("Please Enter A Valid URL!", "red");
+          return false;
+        }
+        var html = data.sourceCode;
+        var css = data.cssCode;
+        var js = data.jsCode;
+        var lang = data.language;
+        var source;
+        var name = data.name;
+        var publicId = data.publicId;
+        var jsScript = document.createElement("script");
+        jsScript.type = "text/javascript";
+        jsScript.textContent = js;
+        jsScript.id = "script-from-editor";
+        var cssStyle = document.createElement("style");
+        cssStyle.textContent = css;
+        cssStyle.id = "style-from-editor"
+        if (lang == "web") {
+          var doc = new DOMParser().parseFromString(html, 'text/html');
+          doc.head.appendChild(cssStyle);
+          doc.head.appendChild(jsScript);
+          source = doc.documentElement.outerHTML;
+          id("main-frame").srcdoc = source;
+          id("code-box").value = source;
+          var dataURI = 'data:text/html,' + encodeURIComponent(source);
+          id("launch-in-browser").href = ev.target.url.value;
+          id("download").addEventListener("click", e => {
+            download(source, name, "text/html");
+          });
+          id("copy").addEventListener("click", e => {
+            try {
+              var copyText = id("code-box")
+              copyText.select();
+              copyText.setSelectionRange(0, 99999999999999999999999);
+              document.execCommand("copy");
+              Toast("Copied to Clipboard!", 'mediumseagreen');
+            }
+            catch (e) {
+              Toast("Couldn't Copy!", 'red');
+            }
+          });
+          id("share").addEventListener("click", e => {
+            navigator.share({
+              title: name,
+              url: window.location.pathname + "?q=" + publicId
+            }).then(() => {
+              Toast('Thanks for sharing!', "mediumseagreen");
+            })
+          });
+        }
+        else {
+          Toast("Not a web Code!", "red");
+        }
+        // console.log(JSON.stringify(data))
+      });
+    }
   }
 }
 function id(i) { return document.getElementById(i); }
@@ -96,6 +101,9 @@ function _() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./service-worker.js');
     console.log("Service Worker Registered!");
+  }
+  if (!navigator.onLine) {
+    Toast("No Internet!");
   }
 }
 
