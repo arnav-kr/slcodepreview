@@ -3,7 +3,10 @@ function GetCode(id, c) {
   fetch("https://api2.sololearn.com/v2/codeplayground/usercodes/" + id)
     .then((response) => { return response.json(); })
     .then((data) => { c(data.data) })
-    .catch(e => { Toast("Please Enter A Valid URL", "red") })
+    .catch(e => {
+      Toast("Please Enter A Valid URL", "red");
+      id("frame-loader").classList.remove("hide");
+    });
 }
 function Code(ev) {
   ev.preventDefault();
@@ -18,12 +21,16 @@ function Code(ev) {
     url = url.endsWith("/?ref=app") ? url.substr(0, url.length - 9) : url;
     url = url.includes("https://code.sololearn.com/") ? url.split("https://code.sololearn.com/")[1] : url;
     url.split("").includes(/[\/|\.|\?|=]/) || url.trim().length == 0 ? validated = false : void 0
-    if (!validated) { Toast("Please Enter a Valid Code URL!", "red") }
+    if (!validated) {
+      Toast("Please Enter a Valid Code URL!", "red");
+      id("frame-loader").classList.remove("hide");
+    }
     else {
       GetCode(url, data => {
         id("frame-loader").classList.add("hide");
         if (data == null) {
           Toast("Please Enter A Valid URL!", "red");
+          id("frame-loader").classList.remove("hide");
           return false;
         }
         var html = data.sourceCode;
@@ -75,6 +82,7 @@ function Code(ev) {
         }
         else {
           Toast("Not a web Code!", "red");
+          id("frame-loader").classList.remove("hide");
         }
         // console.log(JSON.stringify(data))
       });
