@@ -1,4 +1,5 @@
 self.skipWaiting();
+
 self.addEventListener('push', function(ev) {
   console.log('[Service Worker] Received a push message\n');
   let payload = ev.data.json()
