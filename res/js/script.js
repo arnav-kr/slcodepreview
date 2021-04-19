@@ -5,13 +5,13 @@ function GetCode(id, c) {
     .then((data) => { c(data.data) })
     .catch(e => {
       Toast("Please Enter A Valid URL", "red");
-      id("frame-loader").classList.remove("hide");
+      id("frame-loader").classList.add("hide");
     });
 }
 function Code(ev) {
   ev.preventDefault();
   if (!navigator.onLine) {
-    Toast("No Internet!");
+    Toast("No Internet!","red");
   }
   else {
     id("code-box").value = "";
@@ -23,14 +23,14 @@ function Code(ev) {
     url.split("").includes(/[\/|\.|\?|=]/) || url.trim().length == 0 ? validated = false : void 0
     if (!validated) {
       Toast("Please Enter a Valid Code URL!", "red");
-      id("frame-loader").classList.remove("hide");
+      id("frame-loader").classList.add("hide");
     }
     else {
       GetCode(url, data => {
         id("frame-loader").classList.add("hide");
         if (data == null) {
           Toast("Please Enter A Valid URL!", "red");
-          id("frame-loader").classList.remove("hide");
+          id("frame-loader").classList.add("hide");
           return false;
         }
         var html = data.sourceCode;
@@ -82,7 +82,7 @@ function Code(ev) {
         }
         else {
           Toast("Not a web Code!", "red");
-          id("frame-loader").classList.remove("hide");
+          id("frame-loader").classList.add("hide");
         }
         // console.log(JSON.stringify(data))
       });
@@ -111,7 +111,7 @@ function _() {
     console.log("Service Worker Registered!");
   }
   if (!navigator.onLine) {
-    Toast("No Internet!");
+    Toast("No Internet!","red");
   }
 }
 
