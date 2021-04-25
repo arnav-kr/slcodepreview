@@ -99,7 +99,7 @@ function _() {
       id("go").click();
 if (query.has("nav")){
       var navBool = query.get("nav");
-      if (!navBool){
+      if (navBool == false || navBool == 0){
          id("nav").classList.add("hide");
       }
       else{
