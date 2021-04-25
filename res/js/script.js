@@ -107,6 +107,7 @@ if (query.has("nav")){
       }
     }
     }
+}
   if (!navigator.share) {
     id("share").classList.add("hide");
   }
