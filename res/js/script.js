@@ -98,6 +98,14 @@ function _() {
       id("url").value = query.get("q");
       id("go").click();
     }
+    if (query.has("nav")){
+      var navBool = query.get("nav");
+      if (navBool){
+         id("nav").classList.add("hide");
+      }
+      else{
+         id("nav").classList.remove("hide");
+      }
   }
   if (!navigator.share) {
     id("share").classList.add("hide");
