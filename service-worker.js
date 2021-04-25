@@ -20,7 +20,7 @@ self.addEventListener('install', function(e) {
    caches.open('slcodepreview').then(function(cache) {
      return cache.addAll([
        './',
-       'https://cdn.jsdelivr.net/gh/AssassinAguilar/Alertism/Alertism.min.js',
+       'https://cdn.jsdelivr.net/gh/AssassinAguilar/Alertism/dist/V1.0.0/main.js',
        'index.html',
        'res/images/maskable/icon_192.png',
        'res/images/maskable/icon_512.png',
