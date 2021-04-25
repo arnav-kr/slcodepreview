@@ -101,9 +101,21 @@ if (query.has("nav")){
       var navBool = query.get("nav");
       if (navBool == false || navBool == 0){
          id("nav").classList.add("hide");
+         id("main").style.top = 0;
+         id("main").style.height = "100vh";
+         id("frame-loader").style.top = 0;
+         id("frame-loader").style.height = "100vh";
+         id("main-frame").style.top = 0;
+         id("main-frame").style.height = "100vh";
       }
       else{
          id("nav").classList.remove("hide");
+         id("main").style.top = "3.5rem";
+         id("main").style.height = "calc(100vh - 3.5rem)";
+         id("frame-loader").style.top = "3.5rem";
+         id("frame-loader").style.height = "calc(100vh - 3.5rem)";
+         id("main-frame").style.top = "3.5rem";
+         id("main-frame").style.height = "calc(100vh - 3.5rem)";
       }
     }
     }
