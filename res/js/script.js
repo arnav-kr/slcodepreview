@@ -55,7 +55,7 @@ function Code(ev) {
           id("main-frame").srcdoc = source;
           id("code-box").value = source;
           var dataURI = 'data:text/html,' + encodeURIComponent(source);
-          id("launch-in-browser").href = ev.target.url.value;
+          id("launch-in-browser").href = "https://code.sololearn.com/" + publicId;
           id("download").addEventListener("click", e => {
             download(source, name, "text/html");
           });
