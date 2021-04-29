@@ -52,6 +52,7 @@ function Code(ev) {
           doc.head.appendChild(cssStyle);
           doc.head.appendChild(jsScript);
           source = doc.documentElement.outerHTML;
+          document.title = name;
           id("main-frame").srcdoc = source;
           id("code-box").value = source;
           var dataURI = 'data:text/html,' + encodeURIComponent(source);
