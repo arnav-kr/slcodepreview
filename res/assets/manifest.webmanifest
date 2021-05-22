@@ -87,5 +87,16 @@
             "type": "image/png",
             "purpose": "any"
         }
-    ]
+    ],
+  "share_target": {
+  "action": "/share-target/",
+  "method": "GET",
+  "enctype": "application/x-www-form-urlencoded",
+  "params": {
+    "title": "title",
+    "text": "text",
+    "q": "url",
+    "nav": "0"
+  }
+}
 }
