@@ -95,9 +95,7 @@
   "enctype": "application/x-www-form-urlencoded",
   "params": {
     "title": "title",
-    "text": "text",
-    "q": "url",
-    "nav": "0"
+    "text": "text"
   }
 }
 }
