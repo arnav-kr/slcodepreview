@@ -13,10 +13,21 @@
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       const parsedUrl = new URL(window.location);
-      // searchParams.get() will properly handle decoding the values.
-      document.write('Title shared: ' + parsedUrl.searchParams.get('title'));
-      document.write('Text shared: ' + parsedUrl.searchParams.get('text'));
-      document.write('URL shared: ' + parsedUrl.searchParams.get('url'));
+      var title = parsedUrl.searchParams.get('title');
+      var text = parsedUrl.searchParams.get('text');
+      var url = parsedUrl.searchParams.get('url');
+      var isValid,CodeURL,Id;
+      try{
+        CodeURL = new URL(text);
+        isValid = true;
+      }
+      catch(e){
+
+      }
+      if(isValid && (CodeURL.host == "code.sololearn.com" || CodeURL.hostname == "code.sololearn.com")){
+        var Id = CodeURL.pathname.slice(1);
+        window.location.replace("https://arnav-kr.slcodepreview/?q=" + Id + "&nav=1");
+      }
     });
   </script>
 </body>
