@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta http-equiv="refresh" content="0; url = https://arnav-kr.github.io/slcodepreview" /> -->
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const parsedUrl = new URL(window.location);
+      // searchParams.get() will properly handle decoding the values.
+      console.log('Title shared: ' + parsedUrl.searchParams.get('title'));
+      console.log('Text shared: ' + parsedUrl.searchParams.get('text'));
+      console.log('URL shared: ' + parsedUrl.searchParams.get('url'));
+    });
+  </script>
+</body>
+
+</html>
