@@ -11,8 +11,25 @@ You Can Download the Source Code (If Browser Supported)
 
 You Can Also Share The Preview With Others Just click Button (If Browser Supported)
 
+## Preview Codes Directly From SoloLearn
 
-## Use It as a hosting service
+To preview you codes from sololearn at first you have to install the previewer to your device 
+
+this sharing feature is limited to devices
+
+here is support info
+```
+Chrome 76 or later for Android, or Chrome 89 or later on desktop
+```
+#### HOW to Do So
+
+1. Using either Chrome 76 or later for Android, or Chrome 89 or later on desktop, open the [SL Code Previewer](https://arnav-kr.github.io/slcodepreview).
+2. Go to website settings and clear site data to insure that you are viewing the latest, reload the [SL Code Previewer](https://arnav-kr.github.io/slcodepreview)
+3. When prompted, click Install to add the app to your home screen, or use the Chrome menu to add it to your home screen.
+4. Open SoloLearn, Open any code and Click Share Button.
+5. From the target picker, [SL Code Previewer](https://arnav-kr.github.io/slcodepreview).
+
+## Use It as a hosting service for Your Codes
 
 syntax of url is simple 
 
@@ -31,3 +48,5 @@ so the syntax would be
 ```
 https://arnav-kr.slcodepreview/?q=[yourCode id or URL]&nav=0
 ```
+
+By, [Arnav Kumar](https://github.com/arnav-kr)
