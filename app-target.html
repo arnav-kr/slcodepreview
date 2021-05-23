@@ -54,6 +54,9 @@
       }
       if(isValid && (CodeURL.host == "code.sololearn.com" || CodeURL.hostname == "code.sololearn.com")){
         var Id = CodeURL.pathname.slice(1);
+        if(Id.endsWith("/")){
+          Id = Id.substr(0, Id.length - 1);
+        }
         window.location.replace("https://arnav-kr.github.io/slcodepreview/?q=" + Id + "&nav=1");
       }
       else{
