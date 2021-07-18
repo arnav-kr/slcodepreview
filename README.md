@@ -49,4 +49,8 @@ so the syntax would be
 https://arnav-kr.slcodepreview/?q=[yourCode id or URL]&nav=0
 ```
 
+## Direct Hosting
+
+For Direct Hosting Take any of your sololearn codes in that just change `.com` to `.repl.co` and it will be hosted
+
 By, [Arnav Kumar](https://github.com/arnav-kr)
